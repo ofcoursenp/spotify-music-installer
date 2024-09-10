@@ -124,10 +124,7 @@ print(f"Track details have been saved to {output_file}")
 
 import yt_dlp
 
-ydl_opts = {
-    'ffmpeg_location': r"C:\ffmpeg\ffmpeg_extract\ffmpeg-7.0.2-full_build\bin",
-    # other options
-}
+
 def download_audio(title, artist):
     search_query = f"{title} {artist}"
     ydl_opts = {
@@ -139,7 +136,7 @@ def download_audio(title, artist):
         }],
         'outtmpl': f'E:\\spotifymusicinstaller\\music\\{title} - {artist}',
         'noplaylist': True,
-        'ffmpeg_location': 'E:/spotifymusicinstaller/ffmpeg-7.0.2-full_build/bin/',
+        'ffmpeg_location': r"C:\ffmpeg\ffmpeg_extract\ffmpeg-7.0.2-full_build\bin"
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([f"ytsearch:{search_query}"])
